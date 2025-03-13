@@ -1,8 +1,8 @@
 import SingleSkill from "./SingleSkill";
-import { FaHtml5 } from "react-icons/fa";
+import { FaDocker, FaGitAlt, FaGithub, FaHtml5, FaNodeJs } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript } from "react-icons/si";
+import { SiExpress, SiMongodb, SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
@@ -43,12 +43,36 @@ const skills = [
     skill: "TailwindCSS",
     icon: RiTailwindCssFill,
   },
+  {
+    skill: "NodeJS",
+    icon: FaNodeJs,
+  },
+  {
+    skill: "ExpressJS",
+    icon: SiExpress,
+  },
+  {
+    skill: "MongoDB",
+    icon: SiMongodb,
+  },
+  {
+    skill: "Git",
+    icon:  FaGitAlt,
+  },
+  {
+    skill: "GitHub",
+    icon:  FaGithub,
+  },
+  {
+    skill: "Docker",
+    icon:  FaDocker,
+  },
 ];
 
 const AllSkills = () => {
   return (
     <div>
-      <div className="flex items-center justify-center relative gap-2 max-w-[1200px] mx-auto">
+      <div className="flex items-center justify-center relative gap-2  mx-auto">
         {skills.map((item, index) => {
           return (
             <motion.div
