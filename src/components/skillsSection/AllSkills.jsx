@@ -1,5 +1,11 @@
 import SingleSkill from "./SingleSkill";
-import { FaDocker, FaGitAlt, FaGithub, FaHtml5, FaNodeJs } from "react-icons/fa";
+import {
+  FaDocker,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaNodeJs,
+} from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiExpress, SiMongodb, SiTypescript } from "react-icons/si";
@@ -20,6 +26,10 @@ const skills = [
     icon: FaCss3Alt,
   },
   {
+    skill: "TailwindCSS",
+    icon: RiTailwindCssFill,
+  },
+  {
     skill: "JavaScript",
     icon: IoLogoJavascript,
   },
@@ -29,14 +39,6 @@ const skills = [
     icon: FaReact,
   },
 
-  {
-    skill: "NextJS",
-    icon: SiNextdotjs,
-  },
-  {
-    skill: "TailwindCSS",
-    icon: RiTailwindCssFill,
-  },
   {
     skill: "NodeJS",
     icon: FaNodeJs,
@@ -50,14 +52,17 @@ const skills = [
     icon: SiMongodb,
   },
   {
+    skill: "NextJS",
+    icon: SiNextdotjs,
+  },
+  {
     skill: "Git",
-    icon:  FaGitAlt,
+    icon: FaGitAlt,
   },
   {
     skill: "GitHub",
-    icon:  FaGithub,
+    icon: FaGithub,
   },
-
 ];
 
 const AllSkills = () => {

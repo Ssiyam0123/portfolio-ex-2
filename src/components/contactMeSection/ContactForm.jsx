@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  console.log(import.meta.env.VITE_PUBLIC_KEY)
+  // console.log(import.meta.env.VITE_PUBLIC_KEY)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

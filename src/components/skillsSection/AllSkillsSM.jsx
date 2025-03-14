@@ -20,29 +20,19 @@ const skills = [
     icon: FaCss3Alt,
   },
   {
+    skill: "TailwindCSS",
+    icon: RiTailwindCssFill,
+  },
+  {
     skill: "JavaScript",
     icon: IoLogoJavascript,
   },
-  {
-    skill: "TypeScript",
-    icon: SiTypescript,
-  },
+
   {
     skill: "ReactJS",
     icon: FaReact,
   },
-  {
-    skill: "Redux",
-    icon: SiRedux,
-  },
-  {
-    skill: "NextJS",
-    icon: SiNextdotjs,
-  },
-  {
-    skill: "TailwindCSS",
-    icon: RiTailwindCssFill,
-  },
+
   {
     skill: "NodeJS",
     icon: FaNodeJs,
@@ -56,16 +46,16 @@ const skills = [
     icon: SiMongodb,
   },
   {
+    skill: "NextJS",
+    icon: SiNextdotjs,
+  },
+  {
     skill: "Git",
-    icon:  FaGitAlt,
+    icon: FaGitAlt,
   },
   {
     skill: "GitHub",
-    icon:  FaGithub,
-  },
-  {
-    skill: "Docker",
-    icon:  FaDocker,
+    icon: FaGithub,
   },
 ];
 
