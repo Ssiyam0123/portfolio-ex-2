@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
   // console.log(import.meta.env.VITE_PUBLIC_KEY)
@@ -17,9 +18,9 @@ const ContactForm = () => {
     setMessage(e.target.value);
   };
   const form = useRef();
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    emailjs
+   await emailjs
       .sendForm(
         `${import.meta.env.VITE_SERVICE_KEY}`,
         `${import.meta.env.VITE_TEMPLATE_KEY}`,
@@ -33,10 +34,11 @@ const ContactForm = () => {
           setEmail("");
           setName("");
           setMessage("");
-          setSuccess("Message Sent Succesfully");
+          toast.success("Message Sent Succesfully");
         },
         (error) => {
           console.log("FAILED...", error.text);
+          toast.error("Message Failed to Send");
         }
       );
   };

@@ -2,6 +2,7 @@ import AboutMeImage from "./AboutMeImage";
 import AboutMeText from "./AboutMeText";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
+// import ProfileCard from "./ProfileCard";
 const AboutMeMain = () => {
   return (
     <div
@@ -15,6 +16,7 @@ const AboutMeMain = () => {
         viewport={{ once: false, amount: 0.7 }}
       >
         <AboutMeText />
+        {/* <ProfileCard/> */}
       </motion.div>
       <motion.div
         variants={fadeIn("left", 0)}
