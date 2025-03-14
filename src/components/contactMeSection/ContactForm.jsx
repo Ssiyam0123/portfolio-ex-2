@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
+  console.log(import.meta.env.VITE_PUBLIC_KEY)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -19,9 +20,14 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_ko3hmpt", "template_ahbmmqd", form.current, {
-        publicKey: "I6HAT5mUZH7WHabGE",
-      })
+      .sendForm(
+        `${import.meta.env.VITE_SERVICE_KEY}`,
+        `${import.meta.env.VITE_TEMPLATE_KEY}`,
+        form.current,
+        {
+          publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
+        }
+      )
       .then(
         () => {
           setEmail("");

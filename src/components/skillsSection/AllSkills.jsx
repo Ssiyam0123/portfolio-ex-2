@@ -23,18 +23,12 @@ const skills = [
     skill: "JavaScript",
     icon: IoLogoJavascript,
   },
-  {
-    skill: "TypeScript",
-    icon: SiTypescript,
-  },
+
   {
     skill: "ReactJS",
     icon: FaReact,
   },
-  {
-    skill: "Redux",
-    icon: SiRedux,
-  },
+
   {
     skill: "NextJS",
     icon: SiNextdotjs,
@@ -63,10 +57,7 @@ const skills = [
     skill: "GitHub",
     icon:  FaGithub,
   },
-  {
-    skill: "Docker",
-    icon:  FaDocker,
-  },
+
 ];
 
 const AllSkills = () => {
