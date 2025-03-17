@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import Loader from "../loader/Loader";
 
 const ContactForm = () => {
   // console.log(import.meta.env.VITE_PUBLIC_KEY)
@@ -8,6 +9,8 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -20,7 +23,8 @@ const ContactForm = () => {
   const form = useRef();
   const sendEmail = async (e) => {
     e.preventDefault();
-   await emailjs
+    setLoading(true);
+    await emailjs
       .sendForm(
         `${import.meta.env.VITE_SERVICE_KEY}`,
         `${import.meta.env.VITE_TEMPLATE_KEY}`,
@@ -35,9 +39,11 @@ const ContactForm = () => {
           setName("");
           setMessage("");
           toast.success("Message Sent Succesfully");
+          setLoading(false);
         },
         (error) => {
           console.log("FAILED...", error.text);
+          setLoading(false);
           toast.error("Message Failed to Send");
         }
       );
@@ -80,7 +86,7 @@ const ContactForm = () => {
           type="submit"
           className="w-full rounded-lg border border-cyan text-white h-12 font-bold text-xl hover:bg-darkCyan bg-cyan transition-all duration-500"
         >
-          Send
+          {loading ? <Loader /> : "send"}
         </button>
       </form>
     </div>
