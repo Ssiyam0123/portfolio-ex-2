@@ -109,6 +109,7 @@ const AdminDashboard = () => {
     year: "",
     image: "",
     link: "",
+    github: "",
     align: "left",
   });
   const [isProjectEditing, setIsProjectEditing] = useState(false);
@@ -329,7 +330,7 @@ const AdminDashboard = () => {
         setProjects([...projects, added]);
         toast.success("Project added!");
       }
-      setProjectForm({ id: null, name: "", year: "", image: "", link: "", align: "left" });
+      setProjectForm({ id: null, name: "", year: "", image: "", link: "", github: "", align: "left" });
       setIsProjectEditing(false);
     } catch (err) {
       toast.error("Failed to save project");
@@ -342,8 +343,9 @@ const AdminDashboard = () => {
       name: proj.name,
       year: proj.year,
       image: proj.image,
-      link: proj.link,
-      align: proj.align,
+      link: proj.link || "",
+      github: proj.github || "",
+      align: proj.align || "left",
     });
     setIsProjectEditing(true);
   };
@@ -903,6 +905,17 @@ const AdminDashboard = () => {
                 </div>
 
                 <div>
+                  <label className="block text-gray-300 text-sm font-semibold mb-2">GitHub Repository Link</label>
+                  <input
+                    type="text"
+                    className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-white focus:outline-none focus:border-cyan transition duration-300"
+                    placeholder="e.g. https://github.com/siyam-io/repo"
+                    value={projectForm.github}
+                    onChange={(e) => setProjectForm({ ...projectForm, github: e.target.value })}
+                  />
+                </div>
+
+                <div>
                   <label className="block text-gray-300 text-sm font-semibold mb-2">Layout Alignment</label>
                   <select
                     className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-white focus:outline-none focus:border-cyan transition duration-300"
@@ -926,7 +939,7 @@ const AdminDashboard = () => {
                       type="button"
                       onClick={() => {
                         setIsProjectEditing(false);
-                        setProjectForm({ id: null, name: "", year: "", image: "", link: "", align: "left" });
+                        setProjectForm({ id: null, name: "", year: "", image: "", link: "", github: "", align: "left" });
                       }}
                       className="flex-1 h-11 border border-white/10 hover:bg-white/5 font-bold rounded-xl transition cursor-pointer"
                     >
@@ -954,7 +967,8 @@ const AdminDashboard = () => {
                           <h4 className="font-extrabold text-lg text-cyan">{proj.name}</h4>
                           <p className="text-xs text-gray-400 mt-1">Year: {proj.year}</p>
                           <p className="text-xs text-gray-400 mt-1 truncate">Image: {proj.image}</p>
-                          <p className="text-xs text-gray-400 mt-1 truncate">Link: {proj.link}</p>
+                          <p className="text-xs text-gray-400 mt-1 truncate">Live: {proj.link}</p>
+                          <p className="text-xs text-gray-400 mt-1 truncate">GitHub: {proj.github}</p>
                           <p className="text-xs text-gray-400 mt-1">Align: {proj.align}</p>
                         </div>
                         <div className="flex border-t border-white/5">
